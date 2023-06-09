@@ -22,12 +22,11 @@
 
                 <a class="link" asp-controller="account" asp-action="logout">Logout</a>
             }
-            @*<a class="link" asp-controller="account" asp-action="index">Login</a>*@
 
-            @if (User.IsInRole("admin"))
+
+            @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
             {
-                <a class="link" asp-controller="admin" asp-action="index">Admin</a>
-                <a class="link" asp-controller="account" asp-action="logout">Logout</a>
+                <a class="link" asp-action="Index" asp-controller="Admin">ADMIN</a>
             }
 
 
